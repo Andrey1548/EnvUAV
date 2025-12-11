@@ -1,0 +1,24 @@
+version: "3.8"
+
+services:
+  postgres:
+    image: postgis/postgis:15-3.3
+    container_name: uav_postgis
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 12345
+      POSTGRES_DB: uav_db
+    ports:
+      - "5433:5433"
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+
+  flask:
+    build: .
+    container_name: uav_flask
+    environment:
+      DATABASE_URL: postgresql+psycopg://postgres:12345@postgres:5432/uav_db
+    ports:
+      - "5000:5000"
+    depends_on:
+      - postgres

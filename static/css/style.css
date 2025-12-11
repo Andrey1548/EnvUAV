@@ -1,0 +1,18 @@
+html, body { margin: 0; height: 100%; }
+#map { position: absolute; top: 0; bottom: 0; left: 0; right: 0; }
+.input_c { width: 100px; }
+.label_c { flex-flow: row wrap; display: flex; }
+.t_text { font: times; color: mediumorchid; outline: 2px; }
+.hid_el { display: none }
+.panel { position: absolute; bottom: 0; left: 0; right: 0; z-index: 999; text-align: center; background: bisque; border-top: 2px solid green; padding: 10px; }
+.title { position: absolute; top: 0; left: 0; right: 0; z-index: 999; text-align: center; background: white; padding: 10px; border: 2px solid green; }
+.btnStart { width: 100px; height: 100px; border-radius: 50%; border: 2px solid black; color: white; background: rgb(173, 0, 0); font-weight: bold; font-size: 18px; padding: 20px 20px; margin: 10px; cursor: pointer; }
+#log { position: absolute; right: 10px; top: 140px; width: 260px; bottom: 240px; overflow-y: auto;
+  background: rgba(0,0,0,0.8); color: #00ff88; font-family: Consolas, monospace; font-size: 13px;
+  padding: 8px; border-radius: 8px; border: 1px solid #00ff88; z-index: 9999; }
+.leaflet-control-zoom { margin: 100px; border: 2px solid green !important; border-radius: 10px !important; background: bisque !important; box-shadow: 0 3px 8px rgba(0,0,0,0.3); overflow: hidden; }
+.btnSave { border-radius: 0%; border: 2px solid black; color: white; background: rgb(0, 95, 173); font-weight: bold; font-size: 18px; padding: 20px 20px; margin: 10px; cursor: pointer; }
+.btnLoad { border-radius: 0%; border: 2px solid black; color: white; background: rgb(104, 0, 173); font-weight: bold; font-size: 18px; padding: 20px 20px; margin: 10px; cursor: pointer; }
+.weather-label { position: absolute; bottom: 0px; left: 0; right: 0; z-index: 999; background: bisque; border-top: 2px solid green; width: 200px; }
+.exportPanel { display: none; position: absolute; bottom: 0px; right: 0px; z-index: 1000; background: bisque; border-top: 2px solid green; width: 200px; }
+.helpPanel { position: absolute; bottom: 200px; left: 10px; width: 280px; max-height: 75%; overflow-y: auto; background: rgba(255,255,255,0.92); box-shadow: 0 0 10px rgba(0,0,0,0.25); border-radius: 10px; padding: 15px; font-size: 14px; line-height: 1.35; z-index: 9999; }

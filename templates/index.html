@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Маршрутизація БПЛА</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.css"/>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="title"><h2>EnvUAV</h2></div>
+
+  <div id="map"></div>
+
+  <div id="helpPanel" class="helpPanel">
+    <b>Ласкаво просимо!</b><br>
+    Намалюйте область моніторингу полігоном, потім вкажіть базу кліком.<br>
+    <br>
+    <b>ЛІВИЙ КЛІК</b>— встановити базу;<br>
+    <b>SHIFT + ЛІВИЙ КЛІК</b>— автоматично намалювати область.
+  </div>
+
+  <div id="exportPanel" class="exportPanel">
+    <h4>Експорт маршруту</h4>
+    <button class="btn btn-sm btn-primary" onclick="exportRoute('dji')">DJI Waypoints</button>
+    <button class="btn btn-sm btn-primary" onclick="exportRoute('qgc')">QGroundControl</button>
+    <button class="btn btn-sm btn-secondary" onclick="exportRoute('csv')">CSV</button>
+    <button class="btn btn-sm btn-secondary" onclick="exportRoute('geojson')">GeoJSON</button>
+    <button class="btn btn-sm btn-secondary" onclick="exportRoute('kml')">KML</button>
+    <button class="btnCancelExport" id="btnCancelExport">KML</button>
+  </div>
+
+  <div class="panel">
+    <label>Тип сітки:
+      <select id="grid_type">
+        <option value="SQUARE">Квадратна</option>
+        <option value="HEX">Шестикутна</option>
+      </select>
+    </label>
+    <label>Клітина (км) <input id="cell" type="number" value="0.5" step="0.1"></label>
+    <label>Мурахи <input id="ants" type="number" value="20"></label>
+    <label>Ітерації <input id="iters" type="number" value="10"></label>
+    <label>Батарея (Wh) <input id="battery_wh" type="number" value="422"></label>
+    <label class="hid_el">Резерв (%) <input id="reserve_pct" type="number" value="100"></label>
+    <label>Швидкість (км/год) <input id="speed" type="number" value="40"></label>
+    <label>Вантаж (кг) <input id="payload" type="number" value="1.5"></label>
+    <div>
+      <button id="btnSave" class="btnSave">Зберегти</button>
+      <button id="btnStart" class="btnStart">Старт</button>
+      <button id="btnLoad" class="btnLoad">Завантажити</button>
+    </div>
+  </div>
+
+  <div id="log"></div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js"></script>
+  <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+  <script src="/static/js/map.js"></script>
+  <script src="/static/js/drawing.js"></script>
+  <script src="/static/js/socket_handlers.js"></script>
+  <script src="/static/js/mission.js"></script>
+
+</body>
+</html>
