@@ -27,7 +27,6 @@
     <button class="btn btn-sm btn-secondary" onclick="exportRoute('csv')">CSV</button>
     <button class="btn btn-sm btn-secondary" onclick="exportRoute('geojson')">GeoJSON</button>
     <button class="btn btn-sm btn-secondary" onclick="exportRoute('kml')">KML</button>
-    <button class="btnCancelExport" id="btnCancelExport">KML</button>
   </div>
 
   <div class="panel">
@@ -37,10 +36,10 @@
         <option value="HEX">Шестикутна</option>
       </select>
     </label>
-    <label>Клітина (км) <input id="cell" type="number" value="0.5" step="0.1"></label>
+    <label>Клітина (км) <input id="cell" type="number" value="7.0" step="0.1"></label>
     <label>Мурахи <input id="ants" type="number" value="20"></label>
     <label>Ітерації <input id="iters" type="number" value="10"></label>
-    <label>Батарея (Wh) <input id="battery_wh" type="number" value="422"></label>
+    <label>Батарея (Wh) <input id="battery_wh" type="number" value="452"></label>
     <label class="hid_el">Резерв (%) <input id="reserve_pct" type="number" value="100"></label>
     <label>Швидкість (км/год) <input id="speed" type="number" value="40"></label>
     <label>Вантаж (кг) <input id="payload" type="number" value="1.5"></label>

@@ -412,9 +412,8 @@ def handle_start(data):
         "graph_edges": graph_edges
     })
 
-    print("==== FINAL ====")
-    print("Logical маршрут (2D):", round(logical_km, 3), "км")
-    print("Coverage маршрут (3D):", round(coverage_km, 3), "км")
+    print("==== Фінальний маршрут ====")
+    print("Довжина:", round(logical_km, 3), "км")
     print("Енергія:", best_cost, "Вт·год")
     print("================\n")
 
